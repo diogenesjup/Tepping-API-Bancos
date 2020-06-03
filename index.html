@@ -4,7 +4,7 @@
 <script>
 
 $.getJSON("bancos.json", function(json) {
-    document.body.innerHTML = syntaxHighlight(json); // this will show the info it in firebug console
+    document.body.appendChild(document.createElement('pre')).innerHTML = syntaxHighlight(json); // this will show the info it in firebug console
 });
     
 function syntaxHighlight(json) {
