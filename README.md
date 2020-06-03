@@ -2,8 +2,11 @@
 
 <p>API para consulta da lista de bancos no Brasil</p>
 
-> Exemplo de retorno:
+> Endpoint
+https://tepping-api-bancos.now.sh/bancos.json
+<p>&nbsp;</p>
 
+> Exemplo de retorno dos nós:
 ```
 {
     "Code": "001",
@@ -14,4 +17,26 @@
     "DeletedAt": null,
     "IsDeleted": false
   }
+```
+<p>&nbsp;</p>
+
+> Exemplo de chamada
+
+```
+              let bancos = [];
+
+              async function listaBancos(){
+                 
+                 bancos = await fetch('https://tepping-api-bancos.now.sh/bancos.json').then(res => res.json());
+                 
+                 if(bancos.length>0){
+                    console.log("Deu certo");
+                    console.log(bancos);
+                 }else{
+                   console.log("Deu errado");
+                 }
+                 
+              }
+
+              listaBancos();
 ```
